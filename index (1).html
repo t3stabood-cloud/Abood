@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title data-ar="عبد العزيز السوالمة — فني صيانة إلكترونيات" data-en="Abdulaziz Al-Sawalma — Electronics Repair Technician">عبد العزيز السوالمة — فني صيانة إلكترونيات</title>
+<meta name="description" content="فني صيانة إلكترونيات — خبرة 20+ عاماً | Electronics Repair Technician with 20+ years experience" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&family=Tajawal:wght@500;700;800&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#070d16;
+  --card:rgba(16,27,44,.85);
+  --line:rgba(148,178,214,.14);
+  --line-strong:rgba(148,178,214,.24);
+  --text:#e8eef7;
+  --muted:#93a6bf;
+  --cyan:#22d3ee;
+  --teal:#14b8a6;
+  --grad:linear-gradient(135deg,#22d3ee 0%,#14b8a6 100%);
+  --radius:18px;
+  --font:"Cairo",system-ui,-apple-system,"Segoe UI",Tahoma,sans-serif;
+  --display:"Tajawal","Cairo",system-ui,sans-serif;
+}
+html[lang="en"]{
+  --font:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --display:"Space Grotesk","Inter",system-ui,sans-serif;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{
+  margin:0;
+  font-family:var(--font);
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+  text-align:start;
+}
+html[lang="ar"] body{line-height:1.85}
+
+body::before{
+  content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:
+    radial-gradient(620px 420px at 12% -5%, rgba(34,211,238,.13), transparent 70%),
+    radial-gradient(700px 520px at 88% 5%, rgba(20,184,166,.11), transparent 70%),
+    radial-gradient(900px 640px at 50% 105%, rgba(59,130,246,.10), transparent 70%);
+}
+body::after{
+  content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.35;
+  background-image:
+    linear-gradient(rgba(148,178,214,.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148,178,214,.045) 1px, transparent 1px);
+  background-size:64px 64px;
+  mask-image:radial-gradient(ellipse 70% 60% at 50% 30%, #000 30%, transparent 100%);
+  -webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 30%, #000 30%, transparent 100%);
+}
+
+.container{width:min(1120px,92vw);margin-inline:auto}
+.ltr{direction:ltr;unicode-bidi:isolate;display:inline-block}
+.logo-mark{width:44px;height:44px;flex:none;display:block}
+
+/* ===== NAV ===== */
+.nav{
+  position:sticky;top:0;z-index:60;
+  background:rgba(7,13,22,.72);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{display:flex;align-items:center;gap:14px;height:74px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit;margin-inline-end:auto}
+.brand-text{display:flex;flex-direction:column;line-height:1.35}
+.brand-name{font-family:var(--display);font-weight:700;font-size:16px}
+html[lang="en"] .brand-name{font-size:14.5px;letter-spacing:.15em}
+.brand-sub{font-size:11px;color:var(--muted)}
+
+.nav-links{display:flex;align-items:center;gap:4px}
+.nav-links a{
+  color:var(--muted);text-decoration:none;font-size:14.5px;font-weight:500;
+  padding:9px 14px;border-radius:10px;transition:color .25s,background .25s;
+}
+.nav-links a:hover{color:#fff;background:rgba(148,178,214,.08)}
+
+/* ===== LANG SWITCH ===== */
+.lang-switch{
+  display:inline-flex;flex:none;
+  background:rgba(148,178,214,.08);
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:3px;gap:2px;
+}
+.lang-switch button{
+  border:none;background:transparent;
+  color:var(--muted);cursor:pointer;
+  padding:6px 12px;border-radius:7px;
+  font-family:var(--font);font-size:12.5px;font-weight:700;
+  line-height:1;min-width:34px;
+  transition:background .22s,color .22s;
+}
+.lang-switch button:hover{color:#fff;background:rgba(148,178,214,.10)}
+.lang-switch button.active{background:var(--grad);color:#04121a}
+
+.nav-toggle{
+  display:none;flex-direction:column;justify-content:center;gap:5px;
+  width:42px;height:42px;border-radius:11px;cursor:pointer;
+  background:rgba(148,178,214,.07);border:1px solid var(--line);
+}
+.nav-toggle span{display:block;width:18px;height:2px;margin-inline:auto;background:var(--text);border-radius:2px;transition:.3s}
+.nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-toggle.open span:nth-child(2){opacity:0}
+.nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* ===== BUTTONS ===== */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  padding:13px 26px;border-radius:12px;font-size:15px;font-weight:600;
+  font-family:var(--font);text-decoration:none;cursor:pointer;
+  border:1px solid transparent;
+  transition:transform .25s,box-shadow .25s,background .25s,border-color .25s;
+  white-space:nowrap;
+}
+.btn-primary{background:var(--grad);color:#04121a;box-shadow:0 14px 34px -14px rgba(34,211,238,.75)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 20px 42px -14px rgba(34,211,238,.9)}
+.btn-ghost{background:rgba(148,178,214,.06);color:var(--text);border-color:var(--line-strong)}
+.btn-ghost:hover{background:rgba(148,178,214,.12);transform:translateY(-2px)}
+.btn-sm{padding:10px 20px;font-size:13.5px}
+
+/* ===== HERO ===== */
+.hero{padding:82px 0 74px;position:relative}
+.hero-inner{display:grid;grid-template-columns:1.08fr .92fr;gap:56px;align-items:center}
+
+.pill{
+  display:inline-flex;align-items:center;gap:9px;
+  padding:7px 16px;border-radius:999px;
+  background:rgba(34,211,238,.08);border:1px solid rgba(34,211,238,.28);
+  font-size:12.5px;font-weight:600;color:#7ff0e2;
+}
+.pill .dot{width:7px;height:7px;border-radius:50%;background:#22d3ee;box-shadow:0 0 0 0 rgba(34,211,238,.6);animation:pulse 2.4s infinite}
+@keyframes pulse{
+  0%{box-shadow:0 0 0 0 rgba(34,211,238,.55)}
+  70%{box-shadow:0 0 0 10px rgba(34,211,238,0)}
+  100%{box-shadow:0 0 0 0 rgba(34,211,238,0)}
+}
+
+h1{
+  font-family:var(--display);
+  font-size:clamp(2.05rem,4.8vw,3.2rem);
+  line-height:1.1;margin:22px 0 14px;font-weight:700;
+}
+html[lang="ar"] h1{line-height:1.3;font-weight:800}
+.grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.role{font-size:1.02rem;font-weight:600;color:#b9cbe1;margin:0 0 14px}
+.lead{color:var(--muted);font-size:15.5px;max-width:58ch;margin:0 0 30px;line-height:1.9}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.stats{display:flex;gap:38px;flex-wrap:wrap;margin-top:38px;padding-top:26px;border-top:1px solid var(--line)}
+.stat-num{font-family:var(--display);font-size:1.6rem;font-weight:800;line-height:1.2;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat-label{font-size:12.5px;color:var(--muted)}
+
+.hero-visual{position:relative;display:grid;place-items:center;min-height:380px}
+.orb{
+  position:absolute;width:340px;height:340px;border-radius:50%;
+  background:radial-gradient(circle,rgba(34,211,238,.34),rgba(20,184,166,.16) 45%,transparent 72%);
+  filter:blur(58px);animation:float 9s ease-in-out infinite;
+}
+@keyframes float{0%,100%{transform:translateY(-10px)}50%{transform:translateY(10px)}}
+.badge-card{
+  position:relative;z-index:2;width:100%;max-width:330px;
+  padding:38px 26px 32px;text-align:center;
+  background:linear-gradient(165deg,rgba(24,40,63,.92),rgba(10,19,32,.94));
+  border:1px solid var(--line-strong);border-radius:26px;
+  box-shadow:0 34px 90px -34px rgba(0,0,0,.95), inset 0 1px 0 rgba(255,255,255,.06);
+  backdrop-filter:blur(10px);
+}
+.badge-card .logo-mark{width:86px;height:86px;margin:0 auto 20px}
+.badge-name{font-family:var(--display);font-size:1.1rem;font-weight:700}
+.badge-role{font-size:12.5px;color:var(--muted);margin-top:5px}
+.badge-tags{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;margin-top:20px}
+.badge-tags span{
+  font-size:11.5px;font-weight:600;padding:5px 12px;border-radius:8px;
+  background:rgba(34,211,238,.09);border:1px solid rgba(34,211,238,.22);color:#8ceadb;
+}
+
+/* ===== SECTIONS ===== */
+.section{padding:78px 0}
+.section-head{max-width:700px;margin-bottom:42px}
+.eyebrow{display:block;font-size:12.5px;font-weight:700;color:var(--teal);margin-bottom:12px}
+h2{font-family:var(--display);font-size:clamp(1.5rem,3.2vw,2.1rem);line-height:1.4;margin:0 0 14px;font-weight:700}
+html[lang="ar"] h2{font-weight:800}
+.section-head p{color:var(--muted);margin:0;font-size:15.5px;line-height:1.9}
+
+.about-grid{display:grid;grid-template-columns:1.35fr .85fr;gap:20px;align-items:stretch}
+.about-card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:30px;font-size:15.5px;color:#c6d4e6;line-height:2;
+}
+.about-card p{margin:0 0 16px}
+.about-card p:last-child{margin-bottom:0}
+.about-card strong{color:#fff;font-weight:700}
+.highlight{
+  background:linear-gradient(160deg,rgba(34,211,238,.10),rgba(20,184,166,.05));
+  border:1px solid rgba(34,211,238,.26);border-radius:var(--radius);
+  padding:30px;display:flex;flex-direction:column;justify-content:center;
+}
+.highlight .hl-label{font-size:12.5px;font-weight:700;color:#8ceadb;margin-bottom:12px}
+.highlight p{margin:0;color:#d3e0f0;font-size:15px;line-height:2}
+
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(248px,1fr));gap:16px}
+.skill-card{
+  position:relative;overflow:hidden;
+  background:linear-gradient(165deg,rgba(20,34,55,.9),rgba(10,19,32,.9));
+  border:1px solid var(--line);border-radius:16px;padding:24px 22px;
+  transition:transform .35s cubic-bezier(.22,1,.36,1),border-color .35s,box-shadow .35s;
+}
+.skill-card::after{
+  content:"";position:absolute;inset:0;border-radius:16px;pointer-events:none;
+  background:radial-gradient(220px 120px at 80% 0%,rgba(34,211,238,.16),transparent 70%);
+  opacity:0;transition:opacity .35s;
+}
+.skill-card:hover{transform:translateY(-5px);border-color:rgba(34,211,238,.42);box-shadow:0 26px 50px -26px rgba(34,211,238,.45)}
+.skill-card:hover::after{opacity:1}
+.skill-icon{
+  width:46px;height:46px;border-radius:13px;display:grid;place-items:center;
+  background:rgba(34,211,238,.10);border:1px solid rgba(34,211,238,.22);
+  color:var(--cyan);margin-bottom:16px;
+}
+.skill-icon svg{width:23px;height:23px}
+.skill-card h3{font-size:15.5px;font-weight:700;margin:0 0 8px}
+.skill-card p{font-size:13.8px;color:var(--muted);margin:0;line-height:1.85}
+
+.timeline{position:relative;padding-inline-start:34px}
+.timeline::before{
+  content:"";position:absolute;inset-inline-start:5px;top:14px;bottom:14px;
+  width:2px;border-radius:2px;
+  background:linear-gradient(180deg,rgba(34,211,238,.55),rgba(34,211,238,.05));
+}
+.job{
+  position:relative;
+  background:linear-gradient(165deg,rgba(20,34,55,.9),rgba(10,19,32,.9));
+  border:1px solid var(--line);border-radius:var(--radius);padding:30px 30px 26px;
+}
+.job::before{
+  content:"";position:absolute;inset-inline-start:-34px;top:34px;
+  width:12px;height:12px;border-radius:50%;background:var(--cyan);
+  box-shadow:0 0 0 5px rgba(34,211,238,.14);
+}
+.job-top{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;align-items:baseline}
+.job h3{font-family:var(--display);font-size:1.16rem;margin:0;font-weight:700;line-height:1.5}
+.job .company{color:var(--muted);font-size:14px;margin-top:6px}
+.job .when{
+  font-size:12.5px;font-weight:700;padding:6px 14px;border-radius:999px;white-space:nowrap;
+  background:rgba(34,211,238,.10);border:1px solid rgba(34,211,238,.26);color:#8ceadb;
+}
+.job ul{margin:20px 0 0;padding:0;list-style:none;display:grid;gap:11px}
+.job li{position:relative;padding-inline-start:22px;font-size:14.5px;color:#c2d1e4;line-height:1.95}
+.job li::before{
+  content:"";position:absolute;inset-inline-start:2px;top:.85em;
+  width:6px;height:6px;border-radius:2px;background:var(--teal);transform:rotate(45deg);
+}
+
+.contact-wrap{
+  background:linear-gradient(160deg,rgba(21,37,58,.9),rgba(9,17,29,.95));
+  border:1px solid var(--line-strong);border-radius:24px;
+  padding:46px 40px;box-shadow:0 34px 90px -46px rgba(0,0,0,.95);
+  position:relative;overflow:hidden;
+}
+.contact-wrap::before{
+  content:"";position:absolute;top:-140px;inset-inline-end:-100px;
+  width:340px;height:340px;border-radius:50%;
+  background:radial-gradient(circle,rgba(34,211,238,.20),transparent 68%);filter:blur(30px);
+}
+.contact-head{max-width:580px;margin-bottom:34px;position:relative}
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;position:relative}
+.contact-card{
+  display:flex;align-items:center;gap:14px;
+  background:rgba(148,178,214,.055);border:1px solid var(--line);
+  border-radius:14px;padding:18px;text-decoration:none;color:inherit;
+  transition:background .3s,border-color .3s,transform .3s;
+}
+.contact-card:hover{background:rgba(34,211,238,.09);border-color:rgba(34,211,238,.36);transform:translateY(-3px)}
+.contact-card .ic{
+  width:42px;height:42px;flex:none;border-radius:12px;display:grid;place-items:center;
+  background:rgba(34,211,238,.11);border:1px solid rgba(34,211,238,.2);color:var(--cyan);
+}
+.contact-card .ic svg{width:20px;height:20px}
+.contact-card .lbl{font-size:11.5px;color:var(--muted);font-weight:600;display:block}
+.contact-card .val{font-size:14.2px;font-weight:600;word-break:break-word;line-height:1.6;display:block}
+
+footer{border-top:1px solid var(--line);padding:34px 0;margin-top:20px}
+.footer-inner{
+  display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;
+  font-size:13px;color:var(--muted);
+}
+.footer-brand{display:flex;align-items:center;gap:11px}
+.footer-brand .logo-mark{width:34px;height:34px}
+.footer-brand strong{color:var(--text);font-weight:700;font-size:13px}
+
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .75s ease,transform .75s cubic-bezier(.22,1,.36,1)}
+.reveal.in{opacity:1;transform:none}
+
+@media (max-width:960px){
+  .hero-inner{grid-template-columns:1fr;gap:46px}
+  .hero-visual{order:-1;min-height:300px}
+  .about-grid{grid-template-columns:1fr}
+}
+@media (max-width:860px){
+  .nav-toggle{display:flex}
+  .nav-cta{display:none}
+  .nav-links{
+    position:absolute;top:74px;inset-inline:0;
+    flex-direction:column;align-items:stretch;gap:2px;
+    background:rgba(8,15,25,.98);
+    border-bottom:1px solid var(--line);
+    padding:10px 14px 16px;display:none;
+    box-shadow:0 24px 40px -20px rgba(0,0,0,.9);
+  }
+  .nav-links.open{display:flex}
+  .nav-links a{padding:13px 16px;font-size:15px}
+}
+@media (max-width:560px){
+  .hero{padding:56px 0 50px}
+  .section{padding:58px 0}
+  .stats{gap:26px}
+  .contact-wrap{padding:32px 22px}
+  .job{padding:24px 22px}
+  .timeline{padding-inline-start:26px}
+  .job::before{inset-inline-start:-26px;top:30px}
+  .lang-switch button{padding:6px 10px;min-width:30px;font-size:12px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body id="top">
+
+<!-- LOGO SPRITE -->
+<svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
+  <defs>
+    <linearGradient id="brandGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#22d3ee"/>
+      <stop offset="100%" stop-color="#14b8a6"/>
+    </linearGradient>
+    <symbol id="logoMark" viewBox="0 0 64 64">
+      <rect x="1.5" y="1.5" width="61" height="61" rx="17" fill="#0a1420" stroke="url(#brandGrad)" stroke-opacity=".55" stroke-width="1.6"/>
+      <path d="M32 15 L19.5 47 M32 15 L44.5 47" fill="none" stroke="url(#brandGrad)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M24 36.5 H40" fill="none" stroke="url(#brandGrad)" stroke-width="5" stroke-linecap="round"/>
+      <circle cx="32" cy="15" r="4.3" fill="#22d3ee"/>
+      <circle cx="19.5" cy="47" r="3.1" fill="#14b8a6"/>
+      <circle cx="44.5" cy="47" r="3.1" fill="#14b8a6"/>
+      <circle cx="32" cy="15" r="8.6" fill="none" stroke="#22d3ee" stroke-opacity=".28" stroke-width="1.4"/>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="#top">
+      <svg class="logo-mark"><use href="#logoMark"/></svg>
+      <span class="brand-text">
+        <span class="brand-name" data-ar="السوالمة" data-en="AL-SAWALMA">السوالمة</span>
+        <span class="brand-sub" data-ar="صيانة الإلكترونيات" data-en="Electronics Repair">صيانة الإلكترونيات</span>
+      </span>
+    </a>
+
+    <div class="nav-links" id="navLinks">
+      <a href="#about"      data-ar="نبذة"     data-en="About">نبذة</a>
+      <a href="#skills"     data-ar="المهارات" data-en="Skills">المهارات</a>
+      <a href="#experience" data-ar="الخبرة"   data-en="Experience">الخبرة</a>
+      <a href="#contact"    data-ar="تواصل"    data-en="Contact">تواصل</a>
+    </div>
+
+    <div class="lang-switch" role="group" aria-label="Language switch">
+      <button type="button" data-lang="ar" class="active" aria-pressed="true">ع</button>
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+
+    <a class="btn btn-primary btn-sm nav-cta" href="#contact">
+      <span data-ar="وظّفني" data-en="Hire me">وظّفني</span>
+    </a>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="container hero-inner">
+    <div class="hero-text">
+      <div class="pill" data-ar='<span class="dot"></span> متاح للانتقال إلى أيرلندا · نظام <span class="ltr">GEP</span>' data-en='<span class="dot"></span> Available for relocation to Ireland · GEP scheme'>
+        <span class="dot"></span> متاح للانتقال إلى أيرلندا · نظام <span class="ltr">GEP</span>
+      </div>
+
+      <h1 data-ar="عبد العزيز محمد<br><span class='grad'>السوالمة</span>" data-en="Abdulaziz Mohammed<br><span class='grad'>Al-Sawalma</span>">
+        عبد العزيز محمد<br><span class="grad">السوالمة</span>
+      </h1>
+
+      <p class="role" data-ar="فني صيانة إلكترونيات — أخصائي هواتف وحواسيب محمولة" data-en="Electronics Repair Technician — Mobile & Laptop Specialist">فني صيانة إلكترونيات — أخصائي هواتف وحواسيب محمولة</p>
+
+      <p class="lead" data-ar="خبرة عملية تتجاوز 20 عاماً في تشخيص وإصلاح وصيانة الهواتف المحمولة والحواسيب المحمولة من جميع العلامات التجارية الرئيسية — من استبدال الشاشات إلى اللحام الدقيق على مستوى المكوّنات واستعادة البيانات." data-en="Over 20 years of hands-on experience diagnosing, repairing and maintaining mobile phones and laptops across all major brands — from screen replacements to component-level micro-soldering and data recovery.">
+        خبرة عملية تتجاوز 20 عاماً في تشخيص وإصلاح وصيانة الهواتف المحمولة والحواسيب المحمولة من جميع العلامات التجارية الرئيسية — من استبدال الشاشات إلى اللحام الدقيق على مستوى المكوّنات واستعادة البيانات.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#contact">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.5 7 8.5 6 8.5-6"/></svg>
+          <span data-ar="تواصل معي" data-en="Get in touch">تواصل معي</span>
+        </a>
+        <a class="btn btn-ghost" href="#experience" data-ar="استعرض الخبرة" data-en="View experience">استعرض الخبرة</a>
+      </div>
+
+      <div class="stats">
+        <div>
+          <div class="stat-num" data-ar="+20" data-en="20+">+20</div>
+          <div class="stat-label" data-ar="سنة من الخبرة" data-en="Years of experience">سنة من الخبرة</div>
+        </div>
+        <div>
+          <div class="stat-num">2000</div>
+          <div class="stat-label" data-ar="تأسيس الورشة" data-en="Workshop founded">تأسيس الورشة</div>
+        </div>
+        <div>
+          <div class="stat-num">100%</div>
+          <div class="stat-label" data-ar="إصلاح على مستوى المكوّنات" data-en="Component-level repair">إصلاح على مستوى المكوّنات</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="orb"></div>
+      <div class="badge-card">
+        <svg class="logo-mark"><use href="#logoMark"/></svg>
+        <div class="badge-name" data-ar="عبد العزيز السوالمة" data-en="Abdulaziz Al-Sawalma">عبد العزيز السوالمة</div>
+        <div class="badge-role" data-ar="فني صيانة إلكترونيات أول" data-en="Senior Repair Technician">فني صيانة إلكترونيات أول</div>
+        <div class="badge-tags">
+          <span data-ar="هواتف" data-en="Mobile">هواتف</span>
+          <span data-ar="حواسيب" data-en="Laptop">حواسيب</span>
+          <span data-ar="لحام دقيق" data-en="Micro-soldering">لحام دقيق</span>
+          <span data-ar="استعادة بيانات" data-en="Data Recovery">استعادة بيانات</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-ar="الملخص المهني" data-en="Professional Summary">الملخص المهني</span>
+      <h2 data-ar="دقة وموثوقية وعشرون عاماً من العمل المُثبت" data-en="Precision, reliability, and two decades of proven repair work">دقة وموثوقية وعشرون عاماً من العمل المُثبت</h2>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-card reveal">
+        <p data-ar="فني صيانة إلكترونيات عالي المهارة يمتلك أكثر من <strong>20 عاماً</strong> من الخبرة العملية الشاملة في تشخيص وإصلاح وصيانة الهواتف المحمولة والحواسيب المحمولة من جميع العلامات التجارية الرئيسية." data-en="Highly skilled <strong>Electronics Repair Technician</strong> with over <strong>20 years</strong> of comprehensive hands-on experience in diagnosing, repairing and maintaining mobile phones and laptops across all major brands.">
+          فني صيانة إلكترونيات عالي المهارة يمتلك أكثر من <strong>20 عاماً</strong> من الخبرة العملية الشاملة في تشخيص وإصلاح وصيانة الهواتف المحمولة والحواسيب المحمولة من جميع العلامات التجارية الرئيسية.
+        </p>
+        <p data-ar="خبير عصامي بسجل حافل من عمليات الإصلاح الناجحة، بما في ذلك أعطال العتاد والبرمجيات المعقدة. معروف بالدقة والموثوقية وحسن التعامل مع العملاء." data-en="A self-taught expert with a proven track record of successful repairs, including complex hardware and software issues. Known for precision, reliability and strong customer service.">
+          خبير عصامي بسجل حافل من عمليات الإصلاح الناجحة، بما في ذلك أعطال العتاد والبرمجيات المعقدة. معروف بالدقة والموثوقية وحسن التعامل مع العملاء.
+        </p>
+        <p data-ar="يسعى للانتقال إلى أيرلندا ضمن <strong>نظام تصريح العمل العام <span class='ltr'>(GEP)</span></strong>، حيث يمكن اعتبار الخبرة العملية ذات الصلة إلى جانب المؤهلات الرسمية." data-en="Seeking to relocate to Ireland under the <strong>General Employment Permit (GEP)</strong> scheme, where relevant practical experience can be considered alongside formal qualifications.">
+          يسعى للانتقال إلى أيرلندا ضمن <strong>نظام تصريح العمل العام <span class="ltr">(GEP)</span></strong>، حيث يمكن اعتبار الخبرة العملية ذات الصلة إلى جانب المؤهلات الرسمية.
+        </p>
+      </div>
+
+      <div class="highlight reveal">
+        <div class="hl-label" data-ar="هدف الانتقال" data-en="Relocation Goal">هدف الانتقال</div>
+        <p data-ar="مستعد للمساهمة فوراً في فريق صيانة ديناميكي في أيرلندا — بخبرة تشخيص عميقة ومهارات لحام دقيق على مستوى المكوّنات، مع عقلية تضع العميل في المقام الأول." data-en="Ready to contribute immediately to a dynamic repair team in Ireland — bringing deep diagnostic expertise, component-level micro-soldering skills and a strong customer-first mindset.">
+          مستعد للمساهمة فوراً في فريق صيانة ديناميكي في أيرلندا — بخبرة تشخيص عميقة ومهارات لحام دقيق على مستوى المكوّنات، مع عقلية تضع العميل في المقام الأول.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="section" id="skills">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-ar="المهارات الأساسية" data-en="Core Skills">المهارات الأساسية</span>
+      <h2 data-ar="ما أُتقنه" data-en="What I do best">ما أُتقنه</h2>
+      <p data-ar="صيانة إلكترونية متكاملة — من تشخيص اللوحة الأم إلى استعادة الأنظمة وخدمة العملاء." data-en="Full-stack electronics repair — from board-level diagnostics to software recovery and customer care.">صيانة إلكترونية متكاملة — من تشخيص اللوحة الأم إلى استعادة الأنظمة وخدمة العملاء.</p>
+    </div>
+
+    <div class="skills-grid">
+
+      <article class="skill-card reveal">
+        <div class="skill-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18.5h2"/></svg>
+        </div>
+        <h3 data-ar="صيانة الهواتف المحمولة" data-en="Mobile Phone Repair">صيانة الهواتف المحمولة</h3>
+        <p data-ar="استبدال الشاشات، البطاريات، منافذ الشحن، الكاميرات، واستعادة الأجهزة المتضررة من الماء." data-en="Screen replacement, battery, charging ports, cameras and full water-damage recovery.">استبدال الشاشات، البطاريات، منافذ الشحن، الكاميرات، واستعادة الأجهزة المتضررة من الماء.</p>
+      </article>
+
+      <article class="skill-card reveal">
+        <div class="skill-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M2 20h20"/></svg>
+        </div>
+        <h3 data-ar="صيانة الحواسيب المحمولة" data-en="Laptop Repair">صيانة الحواسيب المحمولة</h3>
+        <p data-ar="تشخيص اللوحات الأم، لوحات المفاتيح، المفصلات، أنظمة التبريد ومشاكل الطاقة." data-en="Motherboard diagnostics, keyboards, hinges, cooling systems and power-rail faults.">تشخيص اللوحات الأم، لوحات المفاتيح، المفصلات، أنظمة التبريد ومشاكل الطاقة.</p>
+      </article>
+
+      <article class="skill-card reveal">
+        <div class="skill-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="7" width="10" height="10" rx="2"/><path d="M10 3v4M14 3v4M10 17v4M14 17v4M3 10h4M3 14h4M17 10h4M17 14h4"/></svg>
+        </div>
+        <h3 data-ar="اللحام الدقيق" data-en="Micro-Soldering">اللحام الدقيق</h3>
+        <p data-ar="إصلاح على مستوى المكوّنات يشمل إعادة لحام مكوّنات <span class='ltr'>SMD</span> و<span class='ltr'>BGA</span>." data-en="Component-level repair including SMD rework and BGA reballing / reflow.">إصلاح على مستوى المكوّنات يشمل إعادة لحام مكوّنات <span class="ltr">SMD</span> و<span class="ltr">BGA</span>.</p>
+      </article>
+
+      <article class="skill-card reveal">
+        <div class="skill-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M13.5 5l-3 14"/></svg>
+        </div>
+        <h3 data-ar="استكشاف أعطال البرمجيات" data-en="Software Troubleshooting">استكشاف أعطال البرمجيات</h3>
+        <p data-ar="تثبيت واستعادة أنظمة <span class='ltr'>iOS</span> و<span class='ltr'>Android</span> و<span class='ltr'>Windows</span> و<span class='ltr'>macOS</span>." data-en="iOS, Android, Windows and macOS installation, flashing and system recovery.">تثبيت واستعادة أنظمة <span class="ltr">iOS</span> و<span class="ltr">Android</span> و<span class="ltr">Windows</span> و<span class="ltr">macOS</span>.</p>
+      </article>
+
+      <article class="skill-card reveal">
+        <div class="skill-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0 5.1 5.1L21 12l-9 9-3-3 9-9z"/><path d="m3 21 5-5"/><path d="M14.7 6.3 17 4"/></svg>
+        </div>
+        <h3 data-ar="أدوات التشخيص" data-en="Diagnostic Tools">أدوات التشخيص</h3>
+        <p data-ar="أجهزة قياس متعددة، محطات لحام، ومحطات هواء ساخن لفحص اللوحات على مستوى المسار." data-en="Multimeters, soldering stations, hot-air rework stations and board-level probing.">أجهزة قياس متعددة، محطات لحام، ومحطات هواء ساخن لفحص اللوحات على مستوى المسار.</p>
+      </article>
+
+      <article class="skill-card reveal">
+        <div class="skill-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5.5" rx="7.5" ry="3"/><path d="M4.5 5.5v6c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3v-6"/><path d="M4.5 11.5v6c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3v-6"/></svg>
+        </div>
+        <h3 data-ar="استعادة البيانات" data-en="Data Recovery">استعادة البيانات</h3>
+        <p data-ar="استعادة بيانات المستخدم من الأجهزة المتعطلة إلى جانب حلول نسخ احتياطي موثوقة." data-en="Recovery of user data from failing devices plus reliable backup solutions.">استعادة بيانات المستخدم من الأجهزة المتعطلة إلى جانب حلول نسخ احتياطي موثوقة.</p>
+      </article>
+
+      <article class="skill-card reveal">
+        <div class="skill-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 18 0v4a3 3 0 0 1-3 3h-2"/><rect x="2" y="11" width="4" height="7" rx="1.6"/><rect x="18" y="11" width="4" height="7" rx="1.6"/></svg>
+        </div>
+        <h3 data-ar="خدمة العملاء" data-en="Customer Service">خدمة العملاء</h3>
+        <p data-ar="استشارات فنية، شرح واضح للأعطال، ونصائح إصلاح صادقة وشفافة." data-en="Technical consultation, clear explanations and honest, transparent repair advice.">استشارات فنية، شرح واضح للأعطال، ونصائح إصلاح صادقة وشفافة.</p>
+      </article>
+
+      <article class="skill-card reveal">
+        <div class="skill-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5 12 3l9 5.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><path d="M9 21v-6h6v6"/></svg>
+        </div>
+        <h3 data-ar="إدارة المخزون" data-en="Inventory Management">إدارة المخزون</h3>
+        <p data-ar="توريد قطع الغيار، ضبط المخزون، وتشغيل الورشة بكفاءة عالية في التكلفة." data-en="Spare-parts sourcing, stock control and cost-efficient workshop operations.">توريد قطع الغيار، ضبط المخزون، وتشغيل الورشة بكفاءة عالية في التكلفة.</p>
+      </article>
+
+      <article class="skill-card reveal">
+        <div class="skill-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.4"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M17 5.5a3 3 0 0 1 0 5.8"/><path d="M18.5 20a6 6 0 0 0-2.2-4.6"/></svg>
+        </div>
+        <h3 data-ar="التدريب والإرشاد" data-en="Training &amp; Mentoring">التدريب والإرشاد</h3>
+        <p data-ar="تدريب الفنيين المبتدئين ووضع معايير الصيانة داخل الورشة." data-en="Coaching junior technicians and setting workshop repair standards.">تدريب الفنيين المبتدئين ووضع معايير الصيانة داخل الورشة.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="section" id="experience">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-ar="الخبرة المهنية" data-en="Professional Experience">الخبرة المهنية</span>
+      <h2 data-ar="عقدان من إدارة ورشة صيانة متكاملة" data-en="Two decades running a full-service repair workshop">عقدان من إدارة ورشة صيانة متكاملة</h2>
+    </div>
+
+    <div class="timeline">
+      <article class="job reveal">
+        <div class="job-top">
+          <div>
+            <h3 data-ar="مالك الورشة وفني صيانة إلكترونيات أول" data-en="Workshop Owner &amp; Senior Electronics Repair Technician">مالك الورشة وفني صيانة إلكترونيات أول</h3>
+            <div class="company" data-ar="مونلايت كمبيوتر سيستم — المواصي، خان يونس، فلسطين" data-en="Moonlight Computer System — Al-Mawasi, Khan Younis, Palestine">مونلايت كمبيوتر سيستم — المواصي، خان يونس، فلسطين</div>
+          </div>
+          <span class="when" data-ar="2000 – 2023" data-en="2000 – 2023">2000 – 2023</span>
+        </div>
+
+        <ul>
+          <li data-ar="أسّستُ وأدرتُ ورشة صيانة إلكترونيات متكاملة، وأنجزتُ آلاف عمليات إصلاح الهواتف والحواسيب على مدى أكثر من عقدين." data-en="Founded and operated a full-service electronics repair workshop, completing thousands of mobile and laptop repairs over more than two decades.">أسّستُ وأدرتُ ورشة صيانة إلكترونيات متكاملة، وأنجزتُ آلاف عمليات إصلاح الهواتف والحواسيب على مدى أكثر من عقدين.</li>
+          <li data-ar="شخّصتُ وأصلحتُ أعطال العتاد والبرمجيات لجميع العلامات التجارية الرئيسية — الشاشات، البطاريات، منافذ الشحن، الكاميرات، اللوحات الأم، لوحات المفاتيح، أنظمة التبريد ومشاكل الطاقة." data-en="Diagnosed and repaired hardware and software faults across all major brands — screens, batteries, charging ports, cameras, motherboards, keyboards, cooling systems and power issues.">شخّصتُ وأصلحتُ أعطال العتاد والبرمجيات لجميع العلامات التجارية الرئيسية — الشاشات، البطاريات، منافذ الشحن، الكاميرات، اللوحات الأم، لوحات المفاتيح، أنظمة التبريد ومشاكل الطاقة.</li>
+          <li data-ar="نفّذتُ لحاماً دقيقاً على مستوى المكوّنات يشمل إعادة لحام <span class='ltr'>SMD</span> و<span class='ltr'>BGA</span>، باستخدام أجهزة قياس متعددة ومحطات لحام وهواء ساخن." data-en="Performed component-level micro-soldering including SMD rework and BGA reflow, supported by multimeters, soldering stations and hot-air rework stations.">نفّذتُ لحاماً دقيقاً على مستوى المكوّنات يشمل إعادة لحام <span class="ltr">SMD</span> و<span class="ltr">BGA</span>، باستخدام أجهزة قياس متعددة ومحطات لحام وهواء ساخن.</li>
+          <li data-ar="تعاملتُ مع تشخيص اللوحات المنطقية، واستعادة الأجهزة المتضررة بالسوائل، واستعادة البيانات واستعادة الأنظمة لأجهزة <span class='ltr'>iOS</span> و<span class='ltr'>Android</span> و<span class='ltr'>Windows</span> و<span class='ltr'>macOS</span>." data-en="Handled logic-board troubleshooting, liquid-damage recovery, and data recovery / system restoration for iOS, Android, Windows and macOS devices.">تعاملتُ مع تشخيص اللوحات المنطقية، واستعادة الأجهزة المتضررة بالسوائل، واستعادة البيانات واستعادة الأنظمة لأجهزة <span class="ltr">iOS</span> و<span class="ltr">Android</span> و<span class="ltr">Windows</span> و<span class="ltr">macOS</span>.</li>
+          <li data-ar="أدرتُ مخزون قطع الغيار والمشتريات والعمليات اليومية للورشة، مع تقديم الاستشارات الفنية للعملاء." data-en="Managed spare-parts inventory, purchasing and day-to-day workshop operations while providing technical consultation to customers.">أدرتُ مخزون قطع الغيار والمشتريات والعمليات اليومية للورشة، مع تقديم الاستشارات الفنية للعملاء.</li>
+          <li data-ar="درّبتُ وأرشدتُ الفنيين المبتدئين، ووضعتُ معايير الإصلاح وإجراءات الضمان." data-en="Trained and mentored junior technicians, establishing repair standards and warranty procedures.">درّبتُ وأرشدتُ الفنيين المبتدئين، ووضعتُ معايير الإصلاح وإجراءات الضمان.</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <div class="container">
+    <div class="contact-wrap reveal">
+      <div class="contact-head">
+        <span class="eyebrow" data-ar="تواصل" data-en="Contact">تواصل</span>
+        <h2 data-ar="لنتحدث عن انضمامي إلى فريقكم" data-en="Let's talk about your repair team">لنتحدث عن انضمامي إلى فريقكم</h2>
+        <p style="color:var(--muted);margin:0;font-size:15.5px;line-height:1.9" data-ar="منفتح على الفرص في أيرلندا ضمن نظام تصريح العمل العام <span class='ltr'>(GEP)</span>، ومتاح للمقابلات في أي وقت." data-en="Open to opportunities in Ireland under the General Employment Permit (GEP) scheme. Available for interviews at any time.">منفتح على الفرص في أيرلندا ضمن نظام تصريح العمل العام <span class="ltr">(GEP)</span>، ومتاح للمقابلات في أي وقت.</p>
+      </div>
+
+      <div class="contact-grid">
+        <a class="contact-card" href="tel:+970599541357">
+          <span class="ic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+          </span>
+          <span>
+            <span class="lbl" data-ar="الهاتف" data-en="Phone">الهاتف</span>
+            <span class="val"><span class="ltr">+970 599 541 357</span></span>
+          </span>
+        </a>
+
+        <a class="contact-card" href="mailto:freesign2002@gmail.com">
+          <span class="ic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.5 7 8.5 6 8.5-6"/></svg>
+          </span>
+          <span>
+            <span class="lbl" data-ar="البريد الإلكتروني" data-en="Email">البريد الإلكتروني</span>
+            <span class="val"><span class="ltr">freesign2002@gmail.com</span></span>
+          </span>
+        </a>
+
+        <div class="contact-card">
+          <span class="ic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10.5c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10.2" r="2.9"/></svg>
+          </span>
+          <span>
+            <span class="lbl" data-ar="الموقع" data-en="Location">الموقع</span>
+            <span class="val" data-ar="المواصي، خان يونس، فلسطين" data-en="Al-Mawasi, Khan Younis, Palestine">المواصي، خان يونس، فلسطين</span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <svg class="logo-mark"><use href="#logoMark"/></svg>
+      <strong data-ar="السوالمة · صيانة الإلكترونيات" data-en="AL-SAWALMA · ELECTRONICS REPAIR">السوالمة · صيانة الإلكترونيات</strong>
+    </div>
+    <div>
+      <span data-ar="© جميع الحقوق محفوظة — عبد العزيز محمد محمد السوالمة" data-en="© All rights reserved — Abdulaziz Mohammed Mohammed Al-Sawalma">© جميع الحقوق محفوظة — عبد العزيز محمد محمد السوالمة</span>
+      <span> · <span id="year"></span></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ========== 1) اللغة ========== */
+  function setLang(lang) {
+    var html = document.documentElement;
+    html.lang = lang;
+    html.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+
+    // ترجمة جميع العناصر التي تحمل data-ar و data-en
+    document.querySelectorAll('[data-ar][data-en]').forEach(function (el) {
+      el.innerHTML = el.getAttribute('data-' + lang);
+    });
+
+    // تحديث حالة أزرار التبديل
+    document.querySelectorAll('.lang-switch button').forEach(function (btn) {
+      var active = btn.getAttribute('data-lang') === lang;
+      btn.classList.toggle('active', active);
+      btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+    });
+
+    // تحديث عنوان الصفحة
+    var title = document.querySelector('title');
+    if (title) {
+      var t = title.getAttribute('data-' + lang);
+      if (t) title.textContent = t;
+    }
+
+    // تحديث وصف الصفحة
+    var desc = document.querySelector('meta[name="description"]');
+    if (desc) {
+      desc.setAttribute('content',
+        lang === 'ar'
+          ? 'فني صيانة إلكترونيات — خبرة تتجاوز 20 عاماً في إصلاح الهواتف والحواسيب، لحام دقيق، واستعادة بيانات.'
+          : 'Electronics Repair Technician with 20+ years of hands-on experience in mobile and laptop repair, micro-soldering and data recovery.'
+      );
+    }
+
+    // حفظ التفضيل
+    try { localStorage.setItem('site-lang', lang); } catch (e) {}
+  }
+
+  // ربط أحداث النقر بأزرار اللغة
+  document.querySelectorAll('.lang-switch button').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      setLang(btn.getAttribute('data-lang'));
+    });
+  });
+
+  // استعادة اللغة المحفوظة
+  var saved = 'ar';
+  try { saved = localStorage.getItem('site-lang') || 'ar'; } catch (e) {}
+  if (saved !== 'ar' && saved !== 'en') saved = 'ar';
+  setLang(saved);
+
+  /* ========== 2) قائمة الجوال ========== */
+  var toggle = document.getElementById('navToggle');
+  var links  = document.getElementById('navLinks');
+  if (toggle && links) {
+    toggle.addEventListener('click', function () {
+      var open = links.classList.toggle('open');
+      toggle.classList.toggle('open', open);
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    links.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        links.classList.remove('open');
+        toggle.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
+  /* ========== 3) ظهور عند التمرير ========== */
+  var items = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e, i) {
+        if (e.isIntersecting) {
+          e.target.style.transitionDelay = (i * 60) + 'ms';
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    items.forEach(function (el) { io.observe(el); });
+  } else {
+    items.forEach(function (el) { el.classList.add('in'); });
+  }
+
+  /* ========== 4) السنة ========== */
+  var yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
